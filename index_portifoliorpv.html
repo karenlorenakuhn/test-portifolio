@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relações, Princípios e Valores — Portfólio Acadêmico | Karen Lorena Kuhn Silva</title>
+
+  <!-- Fontes Editoriais -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --wine: #381410;
+  --wine-deep: #2a0e0b;
+  --red: #8b2316;
+  --orange: #df4b13;
+  --cream: #f4efe6;
+  --cream-warm: #eae1d2;
+  --black: #141110;
+  --white: #ffffff;
+
+  --font-serif: 'Playfair Display', 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'DM Sans', -apple-system, sans-serif;
+
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--wine);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--orange);
+  color: var(--cream);
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 4.5vw;
+  position: relative;
+  z-index: 3;
+}
+
+/* NAVEGAÇÃO SUPERIOR */
+.top-nav-fiel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.5rem 4.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  pointer-events: none;
+}
+
+.top-nav-fiel > * {
+  pointer-events: auto;
+}
+
+.nav-brand-rpv {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.16em;
+  color: var(--cream);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.nav-brand-rpv .dot {
+  color: var(--orange);
+}
+
+.top-nav-fiel.on-light .nav-brand-rpv {
+  color: var(--black);
+}
+
+.nav-links-fiel {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.nav-links-fiel a {
+  color: var(--cream);
+  text-decoration: none;
+  opacity: 0.85;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.top-nav-fiel.on-light .nav-links-fiel a {
+  color: var(--black);
+}
+
+.nav-links-fiel a:hover,
+.nav-links-fiel a.active {
+  opacity: 1;
+  border-bottom-color: var(--orange);
+}
+
+/* LIGHTBOX MODAL */
+.fiel-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 17, 16, 0.96);
+  z-index: 3000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+}
+
+.fiel-lightbox.open {
+  display: flex;
+}
+
+.lightbox-box {
+  max-width: 90vw;
+  max-height: 90vh;
+  position: relative;
+  text-align: center;
+}
+
+.lightbox-box img,
+.lightbox-box video {
+  max-height: 78vh;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -2.8rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--cream);
+  font-size: 2rem;
+}
+
+/* SEÇÃO 1: CAPA / HERO */
+.hero-fiel {
+  min-height: 92vh;
+  background-color: var(--wine);
+  color: var(--cream);
+  padding: 8.5rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-shape-arch {
+  position: absolute;
+  top: -10%;
+  right: -8%;
+  width: 56vw;
+  height: 115%;
+  background-color: #481a14;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-shape-orange-circle {
+  position: absolute;
+  top: 10%;
+  right: 5.5%;
+  width: clamp(280px, 34vw, 490px);
+  height: clamp(280px, 34vw, 490px);
+  background-color: var(--orange);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-sub-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 230, 0.85);
+  margin-bottom: 1.5rem;
+}
+
+.hero-main-display {
+  font-family: var(--font-serif);
+  font-size: clamp(4.2rem, 8.8vw, 8.5rem);
+  font-weight: 400;
+  line-height: 0.94;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  position: relative;
+  z-index: 4;
+}
+
+.hero-main-display .italic-word {
+  font-style: italic;
+}
+
+.hero-cream-dot-overlay {
+  display: inline-block;
+  width: clamp(65px, 7.5vw, 110px);
+  height: clamp(65px, 7.5vw, 110px);
+  background-color: var(--cream);
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-left: -2.6vw;
+  margin-top: -1.8vw;
+  position: relative;
+  z-index: 5;
+}
+
+/* SEÇÃO 2: LEMA & AUTORA */
+.motto-author-fiel {
+  background-color: var(--cream);
+  color: var(--black);
+  padding: 6rem 0 7rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.motto-shape-red-blob {
+  position: absolute;
+  bottom: 0;
+  left: -4%;
+  width: clamp(260px, 31vw, 430px);
+  height: 75%;
+  background-color: var(--red);
+  border-top-right-radius: 65%;
+  border-top-left-radius: 15%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.motto-shape-black-dot {
+  position: absolute;
+  top: 28%;
+  right: 2.5%;
+  width: clamp(58px, 6.2vw, 90px);
+  height: clamp(58px, 6.2vw, 90px);
+  background-color: var(--black);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.motto-shape-orange-semi-1 {
+  position: absolute;
+  bottom: 11%;
+  right: 15%;
+  width: clamp(160px, 18vw, 260px);
+  height: clamp(80px, 9vw, 130px);
+  background-color: var(--orange);
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.motto-shape-orange-semi-2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: clamp(200px, 22vw, 310px);
+  height: clamp(65px, 7.5vw, 105px);
+  background-color: var(--orange);
+  border-top-left-radius: 120px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.motto-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 6.4vw, 6.2rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.04;
+  color: var(--black);
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+.motto-headline .orange-destinos {
+  color: var(--orange);
+}
+
+.author-meta-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 240px));
+  gap: 2.5rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid rgba(20, 17, 16, 0.14);
+  position: relative;
+  z-index: 3;
+}
+
+.meta-item-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(20, 17, 16, 0.55);
+  margin-bottom: 0.35rem;
+}
+
+.meta-item-val {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.role-hint {
+  margin-top: 3rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream);
+  position: relative;
+  z-index: 3;
+}
+
+/* SEÇÃO 3: APRESENTAÇÃO DA DISCIPLINA */
+.discipline-fiel {
+  background-color: var(--cream);
+  color: var(--black);
+  padding: 6rem 0 9rem;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(20, 17, 16, 0.08);
+}
+
+.disc-fiel-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.disc-big-statement {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 4.6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.06;
+  color: var(--black);
+  margin-bottom: 4.5rem;
+}
+
+.textured-pillars-cluster {
+  position: relative;
+  height: 360px;
+  max-width: 520px;
+}
+
+.pillar-circle-orange {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 260px;
+  height: 340px;
+  border-top-left-radius: 140px;
+  border-top-right-radius: 140px;
+  background-color: var(--orange);
+  background-image: repeating-linear-gradient(
+    -15deg,
+    rgba(139, 35, 22, 0.32) 0px,
+    rgba(139, 35, 22, 0.32) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+}
+
+.pillar-circle-orange span {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.55rem;
+  color: var(--cream);
+}
+
+.pillar-circle-wine {
+  position: absolute;
+  top: 30px;
+  left: 225px;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  background-color: var(--wine);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(20, 17, 16, 0.38) 0px,
+    rgba(20, 17, 16, 0.38) 9px,
+    transparent 9px,
+    transparent 18px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+.pillar-circle-wine span {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.65rem;
+  color: var(--cream);
+}
+
+.pillar-circle-black {
+  position: absolute;
+  bottom: -60px;
+  left: 165px;
+  width: 240px;
+  height: 130px;
+  border-top-left-radius: 140px;
+  border-top-right-radius: 140px;
+  background-color: var(--black);
+  background-image: radial-gradient(rgba(244, 239, 230, 0.55) 1.5px, transparent 1.5px);
+  background-size: 12px 12px;
+}
+
+.disc-right-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  line-height: 1.42;
+  color: var(--black);
+  margin-bottom: 3rem;
+}
+
+.disc-objectives-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1.2rem;
+}
+
+.disc-objectives-list {
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.disc-objectives-list li {
+  padding-left: 1.4rem;
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(20, 17, 16, 0.88);
+}
+
+.disc-objectives-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--orange);
+}
+
+/* SEÇÃO 4: AULAS (01 A 06) */
+.aula-section-fiel {
+  padding: 7rem 0 8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-wine { background-color: var(--wine); color: var(--cream); }
+.bg-red { background-color: var(--red); color: var(--cream); }
+.bg-cream { background-color: var(--cream); color: var(--black); }
+
+.aula-top-split {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 4.5rem;
+  align-items: start;
+  margin-bottom: 5.5rem;
+}
+
+.aula-giant-num {
+  font-family: var(--font-serif);
+  font-size: clamp(8.5rem, 16vw, 15.5rem);
+  font-weight: 700;
+  line-height: 0.78;
+  color: var(--orange);
+  letter-spacing: -0.04em;
+  margin-bottom: 1.2rem;
+}
+
+.bg-red .aula-giant-num { color: var(--cream); }
+.bg-cream .aula-giant-num { color: var(--red); }
+
+.aula-date-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(244, 239, 230, 0.35);
+  padding: 0.4rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.bg-cream .aula-date-pill {
+  border-color: rgba(20, 17, 16, 0.35);
+}
+
+.aula-date-pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--orange);
+}
+
+.aula-heading-fiel {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.08;
+  margin-bottom: 0.9rem;
+}
+
+.aula-subtitle-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  opacity: 0.8;
+}
+
+.aula-right-stack h3 {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 400;
+  margin-bottom: 0.9rem;
+}
+
+.aula-right-stack p {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.aula-right-bullets {
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.aula-right-bullets li {
+  padding-left: 1.3rem;
+  position: relative;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.aula-right-bullets li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+}
+
+.bg-red .aula-right-bullets li::before { color: var(--cream); }
+
+.notes-cream-card {
+  background-color: var(--cream);
+  color: var(--black);
+  padding: 2.5rem 2.8rem;
+  border-top-left-radius: 36px;
+  border-bottom-right-radius: 36px;
+  margin-top: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.bg-cream .notes-cream-card {
+  background-color: var(--wine);
+  color: var(--cream);
+}
+
+.notes-cream-card h4 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+}
+
+.notes-cream-card p {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* DINÂMICA INTERATIVA SMARTPHONE (Aula 03) */
+.dinamica-phone-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin: 4rem 0 6rem;
+  padding: 3rem 0;
+}
+
+.dinamica-kicker {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.dinamica-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 4.8vw, 4.4rem);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 2.2rem;
+}
+
+.dinamica-word-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.dinamica-word-btn {
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  color: rgba(244, 239, 230, 0.35);
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dinamica-word-btn:hover,
+.dinamica-word-btn.active {
+  color: var(--orange);
+  transform: translateX(10px);
+}
+
+.iphone-fiel-frame {
+  width: 310px;
+  height: 620px;
+  margin: 0 auto;
+  background-color: #120e0d;
+  border-radius: 48px;
+  padding: 13px;
+  box-shadow: 0 35px 75px rgba(0, 0, 0, 0.65), inset 0 0 0 2px #362b28;
+  position: relative;
+}
+
+.iphone-fiel-screen {
+  width: 100%;
+  height: 100%;
+  background-color: var(--red);
+  border-radius: 36px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.45s ease;
+}
+
+.iphone-dynamic-island {
+  position: absolute;
+  top: 18px;
+  width: 92px;
+  height: 22px;
+  background-color: #120e0d;
+  border-radius: 999px;
+}
+
+.iphone-word-main {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 3rem;
+  color: var(--cream);
+  margin-bottom: 0.4rem;
+}
+
+.iphone-word-sub {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.9;
+}
+
+.iphone-word-note {
+  margin-top: 1.4rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(244, 239, 230, 0.88);
+  max-width: 220px;
+}
+
+/* GALERIA DA AULA */
+.galeria-fiel-wrapper {
+  margin-top: 4rem;
+}
+
+.galeria-header-fiel {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 2.2rem;
+}
+
+.galeria-kicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.galeria-title-fiel {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.btn-add-fotos-pill {
+  background-color: var(--orange);
+  color: var(--cream);
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.btn-add-fotos-pill:hover {
+  transform: scale(1.04);
+  background-color: var(--cream);
+  color: var(--wine);
+}
+
+.bg-cream .btn-add-fotos-pill:hover {
+  background-color: var(--wine);
+  color: var(--cream);
+}
+
+.mosaic-fiel-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 220px;
+  gap: 1.35rem;
+}
+
+.fiel-slot {
+  position: relative;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-editorial);
+}
+
+.fiel-slot:hover {
+  transform: translateY(-4px);
+}
+
+.fiel-slot:nth-child(1) { grid-column: span 6; grid-row: span 2; background-color: var(--orange); color: var(--cream); }
+.fiel-slot:nth-child(2) { grid-column: span 4; grid-row: span 1; background-color: var(--red); color: var(--cream); }
+.fiel-slot:nth-child(3) { grid-column: span 2; grid-row: span 1; background-color: var(--cream); color: var(--black); }
+.fiel-slot:nth-child(4) { grid-column: span 4; grid-row: span 1; background-color: var(--red); color: var(--cream); }
+.fiel-slot:nth-child(5) { grid-column: span 2; grid-row: span 2; background-color: var(--black); color: var(--cream); }
+.fiel-slot:nth-child(6) { grid-column: span 4; grid-row: span 1; background-color: var(--orange); color: var(--cream); }
+
+.fiel-slot::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed rgba(244, 239, 230, 0.55);
+  pointer-events: none;
+}
+
+.fiel-slot:nth-child(3)::after {
+  border-color: rgba(20, 17, 16, 0.45);
+}
+
+.slot-meta-top {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.88;
+  z-index: 2;
+}
+
+.slot-center-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  z-index: 2;
+}
+
+.slot-action-bottom {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  z-index: 2;
+}
+
+.fiel-slot.has-photo {
+  padding: 0;
+}
+
+.fiel-slot.has-photo::after {
+  display: none;
+}
+
+.fiel-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-controls-bar {
+  position: absolute;
+  inset: auto 0 0 0;
+  background: linear-gradient(0deg, rgba(20, 17, 16, 0.94) 0%, rgba(20, 17, 16, 0) 100%);
+  padding: 1.2rem 1rem 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cream);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 5;
+}
+
+.fiel-slot:hover .photo-controls-bar {
+  opacity: 1;
+}
+
+.photo-cap-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.88rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.photo-btns-row {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.photo-btns-row button {
+  background: rgba(244, 239, 230, 0.2);
+  border: none;
+  color: var(--cream);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 4px;
+}
+
+.photo-btns-row button:hover {
+  background: var(--orange);
+}
+
+.video-stage-fiel {
+  margin-top: 2.5rem;
+  background-color: var(--black);
+  color: var(--cream);
+  border: 1px dashed rgba(244, 239, 230, 0.45);
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.video-stage-fiel video {
+  width: 100%;
+  max-height: 520px;
+  margin-top: 1.5rem;
+  border-radius: 6px;
+}
+
+/* SEÇÃO DE CONCLUSÃO */
+.conclusao-fiel {
+  background-color: var(--wine-deep);
+  color: var(--cream);
+  padding: 9rem 0 7rem;
+  text-align: center;
+}
+
+.conclusao-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  max-width: 900px;
+  margin: 2.5rem auto 3.5rem;
+}
+
+.conclusao-pills span {
+  border: 1px solid rgba(244, 239, 230, 0.3);
+  padding: 0.6rem 1.35rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+}
+
+.conclusao-quote-big {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  color: var(--orange);
+  margin: 3.5rem 0;
+  line-height: 1.05;
+}
+
+@media (max-width: 1080px) {
+  .disc-fiel-grid,
+  .aula-top-split,
+  .dinamica-phone-section {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .mosaic-fiel-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .fiel-slot:nth-child(1) { grid-column: span 6; }
+  .fiel-slot:nth-child(2) { grid-column: span 3; }
+  .fiel-slot:nth-child(3) { grid-column: span 3; }
+  .fiel-slot:nth-child(4) { grid-column: span 3; }
+  .fiel-slot:nth-child(5) { grid-column: span 3; grid-row: span 1; }
+  .fiel-slot:nth-child(6) { grid-column: span 6; }
+}
+
+@media (max-width: 720px) {
+  .nav-links-fiel {
+    display: none;
+  }
+
+  .author-meta-row {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .mosaic-fiel-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .fiel-slot:nth-child(n) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .iphone-fiel-frame {
+    width: 280px;
+    height: 560px;
+  }
+}
+</style>
+</head>
+<body>
+
+  <!-- NAVEGAÇÃO SUPERIOR -->
+  <header class="top-nav-fiel" id="topNavFiel">
+    <a href="#capa" class="nav-brand-rpv">R<span class="dot">·</span>P<span class="dot">·</span>V</a>
+    <ul class="nav-links-fiel">
+      <li><a href="#disciplina">DISCIPLINA</a></li>
+      <li><a href="#aula1">01</a></li>
+      <li><a href="#aula2">02</a></li>
+      <li><a href="#aula3">03</a></li>
+      <li><a href="#aula4">04</a></li>
+      <li><a href="#aula5">05</a></li>
+      <li><a href="#aula6">06</a></li>
+      <li><a href="#conclusao">CONCLUSÃO</a></li>
+    </ul>
+  </header>
+
+  <!-- 1. CAPA / HERO -->
+  <section id="capa" class="hero-fiel">
+    <div class="hero-shape-arch"></div>
+    <div class="hero-shape-orange-circle"></div>
+
+    <div class="container">
+      <div class="hero-sub-kicker">PORTFÓLIO ACADÊMICO · 2º SEMESTRE</div>
+      <h1 class="hero-main-display">
+        Relações,<span class="hero-cream-dot-overlay"></span><br>
+        Princípios<br>
+        e <span class="italic-word">Valores</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- 2. LEMA E DADOS DA AUTORA -->
+  <section class="motto-author-fiel">
+    <div class="motto-shape-red-blob"></div>
+    <div class="motto-shape-black-dot"></div>
+    <div class="motto-shape-orange-semi-1"></div>
+    <div class="motto-shape-orange-semi-2"></div>
+
+    <div class="container">
+      <h2 class="motto-headline">
+        Escolhas selam <span class="orange-destinos">destinos.</span>
+      </h2>
+
+      <div class="author-meta-row">
+        <div>
+          <div class="meta-item-label">AUTORA</div>
+          <div class="meta-item-val">Karen Lorena Kuhn Silva</div>
+        </div>
+        <div>
+          <div class="meta-item-label">CURSO</div>
+          <div class="meta-item-val">Engenharia de Software</div>
+        </div>
+        <div>
+          <div class="meta-item-label">INSTITUIÇÃO</div>
+          <div class="meta-item-val">UniCatólica</div>
+        </div>
+        <div>
+          <div class="meta-item-label">PERÍODO</div>
+          <div class="meta-item-val">2º semestre</div>
+        </div>
+      </div>
+
+      <div class="role-hint">ROLE</div>
+    </div>
+  </section>
+
+  <!-- 3. APRESENTAÇÃO DA DISCIPLINA -->
+  <section id="disciplina" class="discipline-fiel">
+    <div class="container disc-fiel-grid">
+      <div>
+        <h2 class="disc-big-statement">
+          Uma disciplina sobre quem escolhemos ser.
+        </h2>
+
+        <div class="textured-pillars-cluster">
+          <div class="pillar-circle-orange">
+            <span>Relações</span>
+          </div>
+          <div class="pillar-circle-wine">
+            <span>Princípios</span>
+          </div>
+          <div class="pillar-circle-black"></div>
+        </div>
+      </div>
+
+      <div>
+        <p class="disc-right-text">
+          olhar para as relações humanas, para a ética e para as escolhas que fazemos na vida pessoal e profissional. Este portfólio reúne as aulas, as atividades, as reflexões e os aprendizados do semestre.
+        </p>
+
+        <div class="disc-objectives-label">OBJETIVOS</div>
+        <ul class="disc-objectives-list">
+          <li>Refletir sobre relações familiares, amizades e vínculos profundos.</li>
+          <li>Distinguir ética e moral e compreender a responsabilidade individual.</li>
+          <li>Transformar habilidades em competências e reconhecer oportunidades.</li>
+          <li>Praticar a cooperação, a comunicação e o trabalho em equipe.</li>
+          <li>Expressar o aprendizado de forma criativa, crítica e autoral.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- AULA 01 — 12/08/2026 -->
+  <section id="aula1" class="aula-section-fiel bg-wine">
+    <div class="container">
+      <div class="aula-top-split">
+        <div>
+          <div class="aula-giant-num">01</div>
+          <div class="aula-date-pill">12 DE AGOSTO DE 2026</div>
+          <h2 class="aula-heading-fiel">Relações familiares, aprofundamento e vínculos</h2>
+          <p class="aula-subtitle-italic">Apresentação pessoal, escuta ativa e construção de pertencimento na turma.</p>
+        </div>
+
+        <div class="aula-right-stack">
+          <h3>Sobre o encontro e reflexões</h3>
+          <p>
+            Falamos sobre relação familiar, aprofundamento de relações e sobre a vida pessoal e profissional do professor, que citou também os filhos e a esposa. O professor dividiu a turma em 5 grupos e juntamos os colegas. Ele foi fazendo um pontinho na mão de cada aluno com o pincel e fomos para os respectivos grupos responder às perguntas que havia passado na aula passada.
+          </p>
+          <ul class="aula-right-bullets">
+            <li><strong>Conversação em grupo:</strong> Conhecemos um pouquinho mais de cada um ali do grupo, sabendo um pouco das pessoas que passariam o semestre ao nosso lado.</li>
+            <li><strong>Relações profundas:</strong> Refletir sobre a quantidade de amigos e relacionamentos profundos (cerca de 10), exigindo inteligência emocional e dedicação.</li>
+            <li><strong>O que é felicidade?:</strong> Levar um objeto que remetesse à felicidade individual para reflexão coletiva.</li>
+          </ul>
+
+          <div class="notes-cream-card">
+            <h4>Aprendizados e anotações</h4>
+            <p>
+              "Ter amigos e aprofundar relacionamentos dá trabalho, mas exige inteligência emocional. Conhecer a história do outro é o primeiro passo para construir vínculos sólidos."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeria-fiel-wrapper">
+        <div class="galeria-header-fiel">
+          <div>
+            <span class="galeria-kicker">REGISTROS DA AULA · 12/08/2026</span>
+            <h3 class="galeria-title-fiel">Galeria da aula 01</h3>
+          </div>
+          <button type="button" class="btn-add-fotos-pill" data-add-aula="aula1">ADICIONAR FOTOS</button>
+        </div>
+        <div class="mosaic-fiel-grid" data-aula="aula1" data-label="AULA 01 · 12/08/2026"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AULA 02 — 26/08/2026 -->
+  <section id="aula2" class="aula-section-fiel bg-red">
+    <div class="container">
+      <div class="aula-top-split">
+        <div>
+          <div class="aula-giant-num">02</div>
+          <div class="aula-date-pill">26 DE AGOSTO DE 2026</div>
+          <h2 class="aula-heading-fiel">Habilidades, competências e mercado de trabalho</h2>
+          <p class="aula-subtitle-italic">De Karl Benz a Louis Vuitton, escolhas de carreira e o conceito de felicidade.</p>
+        </div>
+
+        <div class="aula-right-stack">
+          <h3>Sobre o encontro e reflexões</h3>
+          <p>
+            Qual é a minha grande habilidade até aqui? O mercado de trabalho vai mudar e o emprego também. Se sei qual é a habilidade, como me tornar competente? Conversamos sobre o criador da Honda, que entrou para concorrer com as outras marcas, e como a habilidade deve se transformar em competência, criando nicho de mercado para trabalhar sem deixar a competência guardada.
+          </p>
+          <ul class="aula-right-bullets">
+            <li><strong>Projeção e Planejamento:</strong> O que eu espero do mercado de trabalho? Competência é aprimorar habilidades e cuidar das relações emocionais.</li>
+            <li><strong>Histórico industrial:</strong> Histórias de Karl Benz (projeto e fabricação do Benz Victoria e Benz Velo, primeiro carro produzido em alta escala) e da Mercedes-Benz. A esposa de Karl provou que era possível realizar a viagem usando a ferramenta criada pelo marido. O conhecimento administrativo da Daimler complementou a genialidade técnica de Karl.</li>
+            <li><strong>A Família Vuitton:</strong> A Louis Vuitton após 4 anos não fazia mais parte da família Vuitton. Cuidado com as escolhas e a autonomia.</li>
+            <li><strong>Felicidade e Tristeza:</strong> A felicidade é um instante de vida que vale por si só, um momento que você não queria que acabasse e sente falta. A felicidade vive em decorrência da tristeza. A alegria é o aumento da potência de agir; a tristeza é a passagem para um ser menos potente. Felicidade não é meta, você é feliz quando faz sua vida valer a pena de ser vivida. Escolhas selam destinos.</li>
+          </ul>
+
+          <div class="notes-cream-card">
+            <h4>Aprendizados e anotações</h4>
+            <p>
+              "Desenvolver a habilidade exige educação financeira e visão estratégica. A felicidade não é uma meta distante, mas um estado que coroa uma vida que vale a pena ser vivida. Escolhas selam destinos."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeria-fiel-wrapper">
+        <div class="galeria-header-fiel">
+          <div>
+            <span class="galeria-kicker">REGISTROS DA AULA · 26/08/2026</span>
+            <h3 class="galeria-title-fiel">Galeria da aula 02</h3>
+          </div>
+          <button type="button" class="btn-add-fotos-pill" style="background:var(--cream); color:var(--wine);" data-add-aula="aula2">ADICIONAR FOTOS</button>
+        </div>
+        <div class="mosaic-fiel-grid" data-aula="aula2" data-label="AULA 02 · 26/08/2026"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AULA 03 — 09/09/2026 -->
+  <section id="aula3" class="aula-section-fiel bg-wine">
+    <div class="container">
+      <div class="aula-top-split">
+        <div>
+          <div class="aula-giant-num">03</div>
+          <div class="aula-date-pill">09 DE SETEMBRO DE 2026</div>
+          <h2 class="aula-heading-fiel">Ética, moral e consciência humana</h2>
+          <p class="aula-subtitle-italic">A dinâmica "Quero, Posso e Devo" e os limites das decisões profissionais.</p>
+        </div>
+
+        <div class="aula-right-stack">
+          <h3>Sobre o encontro e reflexões</h3>
+          <p>
+            Realizamos a dinâmica <strong>"Quero, Posso e Devo"</strong>, abordando ética e moral em coisas pessoais. Discutimos o que nos autoriza e o que nos permite, entendendo que a moral é o que puxa o freio de mão e o que o solta. Distinção conceitual entre ética e moral aplicada a dilemas reais da sociedade e da tecnologia.
+          </p>
+          <ul class="aula-right-bullets">
+            <li><strong>Em sala:</strong> Exposição dialogada e estudo de casos sobre princípios éticos, normas morais, responsabilidade individual e impacto das decisões profissionais na vida coletiva.</li>
+            <li><strong>Minhas percepções:</strong> Na área de tecnologia, cada linha de código carrega impacto humano. Compreender a ética como reflexão crítica dá segurança para agir com integridade.</li>
+          </ul>
+
+          <div class="notes-cream-card">
+            <h4>Aprendizados e anotações</h4>
+            <p>
+              "A técnica sem bússola ética perde o sentido; integridade e justiça devem guiar toda decisão profissional."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DINÂMICA INTERATIVA SMARTPHONE -->
+      <div class="dinamica-phone-section">
+        <div>
+          <span class="dinamica-kicker">A DINÂMICA</span>
+          <h3 class="dinamica-title">Quero, Posso e<br>Devo</h3>
+
+          <div class="dinamica-word-list">
+            <button type="button" class="dinamica-word-btn" data-key="quero">Quero</button>
+            <button type="button" class="dinamica-word-btn" data-key="posso">Posso</button>
+            <button type="button" class="dinamica-word-btn active" data-key="devo">Devo</button>
+            <button type="button" class="dinamica-word-btn" data-key="consciencia">Consciência</button>
+          </div>
+        </div>
+
+        <div class="iphone-fiel-frame">
+          <div class="iphone-fiel-screen" id="iphoneScreen">
+            <div class="iphone-dynamic-island"></div>
+            <div class="iphone-word-main" id="iphoneWord">Devo</div>
+            <div class="iphone-word-sub" id="iphoneSub">RESPONSABILIDADES</div>
+            <p class="iphone-word-note" id="iphoneNote">O critério ético e moral que orienta nossas decisões pelo bem coletivo e integridade profissional.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeria-fiel-wrapper">
+        <div class="galeria-header-fiel">
+          <div>
+            <span class="galeria-kicker">REGISTROS DA AULA · 09/09/2026</span>
+            <h3 class="galeria-title-fiel">Galeria da aula 03</h3>
+          </div>
+          <button type="button" class="btn-add-fotos-pill" data-add-aula="aula3">ADICIONAR FOTOS</button>
+        </div>
+        <div class="mosaic-fiel-grid" data-aula="aula3" data-label="AULA 03 · 09/09/2026"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AULA 04 — 23/09/2026 -->
+  <section id="aula4" class="aula-section-fiel bg-red">
+    <div class="container">
+      <div class="aula-top-split">
+        <div>
+          <div class="aula-giant-num">04</div>
+          <div class="aula-date-pill">23 DE SETEMBRO DE 2026</div>
+          <h2 class="aula-heading-fiel">Atividades via AVA</h2>
+          <p class="aula-subtitle-italic">Exercícios práticos e reflexivos na plataforma institucional.</p>
+        </div>
+
+        <div class="aula-right-stack">
+          <h3>Sobre o encontro e reflexões</h3>
+          <p>
+            Fizemos algumas atividades que o professor solicitou lá pela nossa plataforma AVA, aprofundando o estudo autônomo e o engajamento com os conteúdos propostos na disciplina.
+          </p>
+          <ul class="aula-right-bullets">
+            <li>Realização das tarefas designadas no ambiente virtual de aprendizagem.</li>
+            <li>Conexão entre teoria de sala de aula e exercícios práticos.</li>
+          </ul>
+
+          <div class="notes-cream-card">
+            <h4>Aprendizados e anotações</h4>
+            <p>
+              "O aprendizado contínuo também ocorre através da dedicação autônoma e da realização responsável das atividades online."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeria-fiel-wrapper">
+        <div class="galeria-header-fiel">
+          <div>
+            <span class="galeria-kicker">REGISTROS DA AULA · 23/09/2026</span>
+            <h3 class="galeria-title-fiel">Galeria da aula 04</h3>
+          </div>
+          <button type="button" class="btn-add-fotos-pill" style="background:var(--cream); color:var(--wine);" data-add-aula="aula4">ADICIONAR FOTOS</button>
+        </div>
+        <div class="mosaic-fiel-grid" data-aula="aula4" data-label="AULA 04 · 23/09/2026"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AULA 05 — 21/10/2026 -->
+  <section id="aula5" class="aula-section-fiel bg-wine">
+    <div class="container">
+      <div class="aula-top-split">
+        <div>
+          <div class="aula-giant-num">05</div>
+          <div class="aula-date-pill">21 DE OUTUBRO DE 2026</div>
+          <h2 class="aula-heading-fiel">Competências em equipe</h2>
+          <p class="aula-subtitle-italic">Cooperação, divisão de papéis, comunicação assertiva e superação de desafios.</p>
+        </div>
+
+        <div class="aula-right-stack">
+          <h3>Sobre o encontro e reflexões</h3>
+          <p>
+            Trabalho colaborativo em grupos para planejar e estruturar a produção criativa final da disciplina, exercitando negociação, escuta e organização de tarefas.
+          </p>
+          <ul class="aula-right-bullets">
+            <li>Trabalhar em equipe exigiu sair do individualismo, ouvir ideias diferentes e combinar habilidades complementares para alcançar um resultado superior.</li>
+          </ul>
+
+          <div class="notes-cream-card">
+            <h4>Aprendizados e anotações</h4>
+            <p>
+              "Cooperar é somar talentos distintos em torno de um propósito comum, transformando diferenças em força."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeria-fiel-wrapper">
+        <div class="galeria-header-fiel">
+          <div>
+            <span class="galeria-kicker">REGISTROS DA AULA · 21/10/2026</span>
+            <h3 class="galeria-title-fiel">Galeria da aula 05</h3>
+          </div>
+          <button type="button" class="btn-add-fotos-pill" data-add-aula="aula5">ADICIONAR FOTOS</button>
+        </div>
+        <div class="mosaic-fiel-grid" data-aula="aula5" data-label="AULA 05 · 21/10/2026"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AULA 06 — 04/11/2026 -->
+  <section id="aula6" class="aula-section-fiel bg-cream">
+    <div class="container">
+      <div class="aula-top-split">
+        <div>
+          <div class="aula-giant-num">06</div>
+          <div class="aula-date-pill">04 DE NOVEMBRO DE 2026</div>
+          <h2 class="aula-heading-fiel">Paródia: criatividade e expressão</h2>
+          <p class="aula-subtitle-italic">Apresentação musical em grupo sintetizando os conceitos da disciplina.</p>
+        </div>
+
+        <div class="aula-right-stack">
+          <h3>Sobre o encontro e reflexões</h3>
+          <p>
+            Apresentação das paródias criadas pelas equipes diante da turma, integrando leitura, escrita, oralidade e expressão artística como síntese da disciplina.
+          </p>
+          <ul class="aula-right-bullets">
+            <li>Fui uma das juradas juntamente com as outras mulheres da sala. Foi algo bem divertido, avaliamos e demos nosso feedback, rimos bastante.</li>
+            <li>Foi uma aula descontraída mas na qual enfrentamos diversos desafios como a timidez e o trabalho em equipe.</li>
+          </ul>
+
+          <div class="notes-cream-card">
+            <h4>Aprendizados e anotações</h4>
+            <p>
+              "Leia para ampliar seus conhecimentos, argumente para defender suas ideias, crie, inove e expresse sua opinião."
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="galeria-fiel-wrapper">
+        <div class="galeria-header-fiel">
+          <div>
+            <span class="galeria-kicker">REGISTROS DA AULA · 04/11/2026</span>
+            <h3 class="galeria-title-fiel">Galeria da aula 06</h3>
+          </div>
+          <button type="button" class="btn-add-fotos-pill" data-add-aula="aula6">ADICIONAR FOTOS</button>
+        </div>
+        <div class="mosaic-fiel-grid" data-aula="aula6" data-label="AULA 06 · 04/11/2026"></div>
+
+        <!-- ESPAÇO PARA VÍDEO DA PARÓDIA -->
+        <div class="video-stage-fiel" data-aula="aula6">
+          <span class="galeria-kicker" style="color:var(--orange);">REGISTRO AUDIOVISUAL · 04/11/2026</span>
+          <h4 style="font-family:var(--font-serif); font-size:1.7rem; font-weight:400;">Vídeo da Apresentação da Paródia</h4>
+          <div class="video-stage-body"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSÃO -->
+  <section id="conclusao" class="conclusao-fiel">
+    <div class="container">
+      <span class="galeria-kicker" style="color:var(--orange);">FECHAMENTO DA JORNADA</span>
+      <h2 class="aula-heading-fiel" style="max-width:860px; margin:0 auto 1.8rem;">
+        Síntese de uma trajetória construída com propósito
+      </h2>
+      <p style="max-width:740px; margin:0 auto; font-size:1.08rem; line-height:1.8; opacity:0.9;">
+        Ao longo deste semestre, cada encontro revelou que a formação em Engenharia de Software ganha sentido pleno quando caminhamos com ética, empatia, inteligência emocional e cooperação. As relações que cultivamos e os princípios que escolhemos defender definem quem nos tornamos como profissionais e seres humanos.
+      </p>
+
+      <div class="conclusao-pills">
+        <span>Relações humanas</span>
+        <span>Amizades e vínculos profundos</span>
+        <span>Habilidades e competências</span>
+        <span>Consciência ética e moral</span>
+        <span>Responsabilidade pelas escolhas</span>
+        <span>Cooperação em equipe</span>
+        <span>Criatividade e expressão</span>
+      </div>
+
+      <div class="conclusao-quote-big">"Escolhas selam destinos."</div>
+
+      <div style="margin-top:3rem; padding-top:2rem; border-top:1px solid rgba(244,239,230,0.15);">
+        <strong style="font-family:var(--font-serif); font-size:1.45rem; font-weight:400;">Karen Lorena Kuhn Silva</strong><br>
+        <span style="font-size:0.95rem; opacity:0.8;">Engenharia de Software · UniCatólica · 2º semestre · 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="fiel-lightbox" id="fielLightbox" role="dialog" aria-modal="true">
+    <div class="lightbox-box">
+      <button type="button" class="lightbox-close" id="lightboxCloseBtn" aria-label="Fechar">×</button>
+      <div id="lightboxMediaSlot"></div>
+      <div style="margin-top:1rem; font-family:var(--font-serif); font-style:italic; font-size:1.2rem; color:var(--cream);" id="lightboxCaptionSlot"></div>
+    </div>
+  </div>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+const DINAMICA_STATES = {
+  quero: {
+    word: 'Quero',
+    sub: 'DESEJOS E VONTADES',
+    note: 'Aquilo que desperta nossa vontade e interesse imediato — o impulso inicial de toda escolha.',
+    bg: '#4e1a14'
+  },
+  posso: {
+    word: 'Posso',
+    sub: 'LIMITES E CAPACIDADES',
+    note: 'O que está dentro das nossas possibilidades técnicas, legais e reais sem ultrapassar fronteiras.',
+    bg: '#df4b13'
+  },
+  devo: {
+    word: 'Devo',
+    sub: 'RESPONSABILIDADES',
+    note: 'O critério ético e moral que orienta nossas decisões pelo bem coletivo e integridade profissional.',
+    bg: '#8b2316'
+  },
+  consciencia: {
+    word: 'Consciência',
+    sub: 'SÍNTESE HUMANA',
+    note: 'O equilíbrio lúcido entre desejo, possibilidade e dever que transforma escolhas em caráter.',
+    bg: '#381410'
+  }
+};
+
+const DB_NAME = 'RPV_FielMediaDB_v5';
+const DB_VERSION = 1;
+const STORE_NAME = 'media';
+
+let dbRef = null;
+
+function openMediaDB() {
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME, DB_VERSION);
+    req.onupgradeneeded = (e) => {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains(STORE_NAME)) {
+        const st = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+        st.createIndex('aulaId', 'aulaId', { unique: false });
+      }
+    };
+    req.onsuccess = (e) => {
+      dbRef = e.target.result;
+      resolve(dbRef);
+    };
+    req.onerror = (e) => reject(e.target.error);
+  });
+}
+
+async function getAulaMedia(aulaId) {
+  if (!dbRef) await openMediaDB();
+  return new Promise((resolve) => {
+    const tx = dbRef.transaction(STORE_NAME, 'readonly');
+    const idx = tx.objectStore(STORE_NAME).index('aulaId');
+    const req = idx.getAll(aulaId);
+    req.onsuccess = () => {
+      const items = req.result || [];
+      items.sort((a, b) => a.order - b.order);
+      resolve(items);
+    };
+  });
+}
+
+async function putAulaMedia(item) {
+  if (!dbRef) await openMediaDB();
+  return new Promise((resolve) => {
+    const tx = dbRef.transaction(STORE_NAME, 'readwrite');
+    tx.objectStore(STORE_NAME).put(item);
+    tx.oncomplete = () => resolve();
+  });
+}
+
+async function deleteAulaMedia(id) {
+  if (!dbRef) await openMediaDB();
+  return new Promise((resolve) => {
+    const tx = dbRef.transaction(STORE_NAME, 'readwrite');
+    tx.objectStore(STORE_NAME).delete(id);
+    tx.oncomplete = () => resolve();
+  });
+}
+
+function fileToDataURL(file) {
+  return new Promise((resolve) => {
+    const r = new FileReader();
+    r.onload = (e) => resolve(e.target.result);
+    r.readAsDataURL(file);
+  });
+}
+
+async function renderFielGallery(aulaId) {
+  const grid = document.querySelector(`.mosaic-fiel-grid[data-aula="${aulaId}"]`);
+  if (!grid) return;
+
+  const metaLabel = grid.dataset.label;
+  const items = await getAulaMedia(aulaId);
+  const photos = items.filter(i => i.type === 'image');
+  const videoItem = items.find(i => i.type === 'video');
+
+  const totalSlots = Math.max(6, photos.length);
+  grid.innerHTML = '';
+
+  for (let i = 0; i < totalSlots; i++) {
+    const photo = photos[i];
+    const slot = document.createElement('div');
+    slot.className = 'fiel-slot' + (photo ? ' has-photo' : '');
+
+    if (photo) {
+      slot.innerHTML = `
+        <img src="${photo.url}" alt="${photo.caption || metaLabel}">
+        <div class="photo-controls-bar">
+          <span class="photo-cap-text">${photo.caption || 'Registro da aula'}</span>
+          <div class="photo-btns-row">
+            <button type="button" data-op="left" title="Mover antes">◀</button>
+            <button type="button" data-op="right" title="Mover depois">▶</button>
+            <button type="button" data-op="cap" title="Editar legenda">Legenda</button>
+            <button type="button" data-op="rep" title="Substituir">Trocar</button>
+            <button type="button" data-op="del" title="Remover">✕</button>
+          </div>
+        </div>
+      `;
+
+      slot.querySelector('img').onclick = () => openFielLightbox(photo.url, 'image', photo.caption || metaLabel);
+
+      slot.querySelectorAll('.photo-btns-row button').forEach(btn => {
+        btn.onclick = async (ev) => {
+          ev.stopPropagation();
+          const op = btn.dataset.op;
+          if (op === 'del') {
+            await deleteAulaMedia(photo.id);
+            renderFielGallery(aulaId);
+          } else if (op === 'cap') {
+            const newCap = prompt('Legenda da fotografia:', photo.caption || '');
+            if (newCap !== null) {
+              photo.caption = newCap;
+              await putAulaMedia(photo);
+              renderFielGallery(aulaId);
+            }
+          } else if (op === 'rep') {
+            pickPhotos(aulaId, false, photo);
+          } else if (op === 'left' && i > 0) {
+            const prev = photos[i - 1];
+            [photo.order, prev.order] = [prev.order, photo.order];
+            await putAulaMedia(photo);
+            await putAulaMedia(prev);
+            renderFielGallery(aulaId);
+          } else if (op === 'right' && i < photos.length - 1) {
+            const next = photos[i + 1];
+            [photo.order, next.order] = [next.order, photo.order];
+            await putAulaMedia(photo);
+            await putAulaMedia(next);
+            renderFielGallery(aulaId);
+          }
+        };
+      });
+    } else {
+      slot.innerHTML = `
+        <span class="slot-meta-top">${metaLabel}</span>
+        <span class="slot-center-text">Espaço reservado</span>
+        <span class="slot-action-bottom">ADICIONAR FOTO</span>
+      `;
+      slot.onclick = () => pickPhotos(aulaId, true);
+    }
+    grid.appendChild(slot);
+  }
+
+  const vStage = document.querySelector(`.video-stage-fiel[data-aula="${aulaId}"]`);
+  if (vStage) {
+    const container = vStage.querySelector('.video-stage-body');
+    if (videoItem) {
+      container.innerHTML = `
+        <video src="${videoItem.url}" controls></video>
+        <div style="margin-top:1rem; display:flex; justify-content:center; gap:0.8rem;">
+          <button type="button" class="btn-add-fotos-pill" id="repVideo-${aulaId}">Trocar Vídeo</button>
+          <button type="button" class="btn-add-fotos-pill" style="background:var(--red);" id="delVideo-${aulaId}">Remover Vídeo</button>
+        </div>
+      `;
+      document.getElementById(`repVideo-${aulaId}`).onclick = () => pickVideo(aulaId, videoItem);
+      document.getElementById(`delVideo-${aulaId}`).onclick = async () => {
+        await deleteAulaMedia(videoItem.id);
+        renderFielGallery(aulaId);
+      };
+    } else {
+      container.innerHTML = `
+        <p style="opacity:0.82; margin:0.8rem 0 1.2rem;">Espaço reservado para o vídeo da apresentação da paródia (04/11/2026).</p>
+        <button type="button" class="btn-add-fotos-pill" id="addVideo-${aulaId}">ADICIONAR VÍDEO</button>
+      `;
+      document.getElementById(`addVideo-${aulaId}`).onclick = () => pickVideo(aulaId, null);
+    }
+  }
+}
+
+function pickPhotos(aulaId, multiple = true, replaceTarget = null) {
+  const inp = document.createElement('input');
+  inp.type = 'file';
+  inp.accept = 'image/*';
+  inp.multiple = multiple;
+  inp.onchange = async (e) => {
+    const files = Array.from(e.target.files || []);
+    if (!files.length) return;
+
+    const current = await getAulaMedia(aulaId);
+    let maxOrder = current.reduce((m, item) => Math.max(m, item.order || 0), 0);
+
+    for (const file of files) {
+      const url = await fileToDataURL(file);
+      if (replaceTarget) {
+        replaceTarget.url = url;
+        await putAulaMedia(replaceTarget);
+      } else {
+        maxOrder++;
+        await putAulaMedia({
+          id: `${aulaId}_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+          aulaId,
+          type: 'image',
+          url,
+          caption: file.name.replace(/\.[^/.]+$/, ''),
+          order: maxOrder
+        });
+      }
+    }
+    renderFielGallery(aulaId);
+  };
+  inp.click();
+}
+
+function pickVideo(aulaId, existing = null) {
+  const inp = document.createElement('input');
+  inp.type = 'file';
+  inp.accept = 'video/*';
+  inp.onchange = async (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const url = await fileToDataURL(file);
+    await putAulaMedia({
+      id: existing ? existing.id : `${aulaId}_vid_${Date.now()}`,
+      aulaId,
+      type: 'video',
+      url,
+      caption: file.name,
+      order: 999
+    });
+    renderFielGallery(aulaId);
+  };
+  inp.click();
+}
+
+function openFielLightbox(url, type, caption) {
+  const lb = document.getElementById('fielLightbox');
+  const box = document.getElementById('lightboxMediaSlot');
+  const cap = document.getElementById('lightboxCaptionSlot');
+  box.innerHTML = type === 'video'
+    ? `<video src="${url}" controls autoplay></video>`
+    : `<img src="${url}" alt="${caption}">`;
+  cap.textContent = caption || '';
+  lb.classList.add('open');
+}
+
+gsap.registerPlugin(ScrollTrigger);
+
+function setDinamicaState(key) {
+  const st = DINAMICA_STATES[key];
+  if (!st) return;
+
+  const screen = document.getElementById('iphoneScreen');
+  const word = document.getElementById('iphoneWord');
+  const sub = document.getElementById('iphoneSub');
+  const note = document.getElementById('iphoneNote');
+
+  if (screen) screen.style.backgroundColor = st.bg;
+  if (word) word.textContent = st.word;
+  if (sub) sub.textContent = st.sub;
+  if (note) note.textContent = st.note;
+
+  document.querySelectorAll('.dinamica-word-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.key === key);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  await openMediaDB();
+
+  for (const aula of ['aula1', 'aula2', 'aula3', 'aula4', 'aula5', 'aula6']) {
+    await renderFielGallery(aula);
+  }
+
+  document.querySelectorAll('[data-add-aula]').forEach(btn => {
+    btn.onclick = () => pickPhotos(btn.dataset.addAula, true);
+  });
+
+  document.querySelectorAll('.dinamica-word-btn').forEach(btn => {
+    btn.onclick = () => setDinamicaState(btn.dataset.key);
+  });
+
+  const phoneSec = document.querySelector('.dinamica-phone-section');
+  if (phoneSec) {
+    const keys = ['quero', 'posso', 'devo', 'consciencia'];
+    ScrollTrigger.create({
+      trigger: phoneSec,
+      start: 'top 65%',
+      end: 'bottom 35%',
+      onUpdate: (self) => {
+        const idx = Math.min(keys.length - 1, Math.floor(self.progress * keys.length));
+        setDinamicaState(keys[idx]);
+      }
+    });
+  }
+
+  const nav = document.getElementById('topNavFiel');
+  const lightSections = document.querySelectorAll('.bg-cream, .motto-author-fiel, .discipline-fiel');
+  lightSections.forEach(sec => {
+    ScrollTrigger.create({
+      trigger: sec,
+      start: 'top 60px',
+      end: 'bottom 60px',
+      onEnter: () => nav.classList.add('on-light'),
+      onLeave: () => nav.classList.remove('on-light'),
+      onEnterBack: () => nav.classList.add('on-light'),
+      onLeaveBack: () => nav.classList.remove('on-light')
+    });
+  });
+
+  const allSections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links-fiel a');
+  allSections.forEach(sec => {
+    ScrollTrigger.create({
+      trigger: sec,
+      start: 'top 45%',
+      end: 'bottom 45%',
+      onEnter: () => navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${sec.id}`)),
+      onEnterBack: () => navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${sec.id}`))
+    });
+  });
+
+  const lb = document.getElementById('fielLightbox');
+  const lbClose = document.getElementById('lightboxCloseBtn');
+  if (lbClose) lbClose.onclick = () => lb.classList.remove('open');
+  if (lb) lb.onclick = (e) => { if (e.target === lb) lb.classList.remove('open'); };
+
+  gsap.from('.hero-main-display', { y: 50, opacity: 0, duration: 1, ease: 'power3.out' });
+  gsap.from('.hero-shape-orange-circle', { scale: 0.85, opacity: 0, duration: 1.2, ease: 'power3.out' });
+
+  gsap.utils.toArray('.aula-top-split, .galeria-fiel-wrapper, .disc-fiel-grid').forEach(el => {
+    gsap.from(el, {
+      y: 35,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
